@@ -32,7 +32,41 @@ func main() {
 	cityName := "Agra" // No need for var keyword
 	cityCount := 10    //  The type is inferred automatically.
 	isReady := false
+	// Note: With Short Declaration , you can have to provide with some value
+	// cityCount := int  it will through error
 
 	fmt.Printf("Value of cityName = %v, cityCount = %v and isReady = %v", cityName, cityCount, isReady)
 
+	// 3. Declaring Multiple Variables at Once (Grouped Declaration)
+	//   This is useful for organizing related variables.
+	var (
+		age     int
+		empName string  = "John"
+		salary  float64 = 45000.50
+	)
+
+	// With short declaration (:=) ->  age, empName, salary := 1, "John", 45000.50
+
+	fmt.Println("age =", age, " , Employee Name= ", empName, " and salary= ", salary)
+
+	// 4. Constants with (const) keyword
+	const pi = 3.14
+	const name string = "Golang"
+	// Use const for immutable values.
+
+	// **why Does Go's Compiler Allow Unused const, But Not Unused Variables?**
+	// Go enforces variable usage because var occupies memory at runtime, and unused variables may indicate bugs or unnecessary code.
+	// In contrast, const values are evaluated at compile-time and do not take up memory at runtime, so the compiler allows them to be
+	// unused without affecting performance or execution.
+
+	// 5. Blank Identifier (_)
+	// Used when a variable is declared but not needed.
+	// x, _ := someFunction()  // Ignore the second return value
+
+	// 6. Using Pointers
+
+	var ptr *int // Pointer to an int
+	ptr = &x     // Assign address of x
+
+	fmt.Printf("Pointer value = %v", ptr)
 }
