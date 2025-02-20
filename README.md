@@ -59,8 +59,8 @@ This project is designed to help beginners understand the fundamentals of Go (**
 ### **Clone the Repository**
 
 ```sh
- git clone https://github.com/your-username/learning-golang-basics.git
- cd learning-golang-basics
+ git clone https://github.com/singhajaykumar/learning-golang.git
+ cd learning-golang
 ```
 
 ### **Run Your First Go Program**
