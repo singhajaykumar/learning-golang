@@ -2,8 +2,18 @@ package main
 
 import "fmt"
 
-var globalVarCity string = "Agra"
-var globalCityCount int
+var globalVarCity string = "Agra" //  In Go, global variables are declared outside functions but within the package scope.
+var globalCityCount int           //  These variables can be accessed from any function within the same package.
+
+// Few point of Global variable -
+// Declared outside any function.
+// Accessible throughout the package.
+// Can be modified from any function within the package.
+
+// init() is a special function that initializes global variables before main().
+func init() {
+	globalCityCount = 100 // Initialize global variable
+}
 
 func main() {
 
@@ -54,11 +64,6 @@ func main() {
 	const name string = "Golang"
 	// Use const for immutable values.
 
-	// **why Does Go's Compiler Allow Unused const, But Not Unused Variables?**
-	// Go enforces variable usage because var occupies memory at runtime, and unused variables may indicate bugs or unnecessary code.
-	// In contrast, const values are evaluated at compile-time and do not take up memory at runtime, so the compiler allows them to be
-	// unused without affecting performance or execution.
-
 	// 5. Blank Identifier (_)
 	// Used when a variable is declared but not needed.
 	// x, _ := someFunction()  // Ignore the second return value
@@ -69,4 +74,20 @@ func main() {
 	ptr = &x     // Assign address of x
 
 	fmt.Printf("Pointer value = %v", ptr)
+
+	//Note : You will use proper pointer variable, when you use 'struct'
 }
+
+// Few Imp Question -
+// 1. **why Does Go's Compiler Allow Unused const, But Not Unused Variables?**
+// Go enforces variable usage because var occupies memory at runtime, and unused variables may indicate bugs or unnecessary code.
+// In contrast, const values are evaluated at compile-time and do not take up memory at runtime, so the compiler allows them to be
+// unused without affecting performance or execution.
+
+// 2. Can We Use Short Declaration (:=) for Global Variables in Golang?
+// No, we cannot use := for global variables in Go. It is only allowed inside functions.
+// := is shorthand for var and only works inside functions.
+// It is designed for local scope (inside func), not at the package level.
+// "If := were allowed for global variables, it could create ambiguity in scope.
+// Local functions might unintentionally shadow global variables, making it unclear whether a variable is being modified or redefined.
+// Go enforces var for global declarations to ensure explicit scoping and avoid unintended shadowing."
