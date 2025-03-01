@@ -38,15 +38,19 @@ func main() {
 
 	fmt.Printf("Value of variable x = %v , count = %v , a = %v , b = %v , c = %v, z = %v, y = %v , perosnName = %v and isValid = %v\n", x, count, a, b, c, z, y, personName, isValid)
 
+	//-----------------------------------------------------------------------------------------------------------------
 	// 2. Short Declaration (:=) - This is a shorthand for declaring and initializing a variable inside a function.
 	cityName := "Agra" // No need for var keyword
 	cityCount := 10    //  The type is inferred automatically.
 	isReady := false
-	// Note: With Short Declaration , you can have to provide with some value
-	// cityCount := int  it will through error
+	// Note: With Short Declaration , while declaratio you can have to provide some value otherwise it will through error
+	// e.g cityCount := int - error , cityCount := 20 - success
+	// Most of cases, Short declaration generally used when function return some value
+	// e.g areaCircle := areaOfCircle(12, 23) - you dont need to declare var areaCircle seperatly
 
 	fmt.Printf("Value of cityName = %v, cityCount = %v and isReady = %v", cityName, cityCount, isReady)
 
+	//-----------------------------------------------------------------------------------------------------------------
 	// 3. Declaring Multiple Variables at Once (Grouped Declaration)
 	//   This is useful for organizing related variables.
 	var (
@@ -54,28 +58,33 @@ func main() {
 		empName string  = "John"
 		salary  float64 = 45000.50
 	)
-
-	// With short declaration (:=) ->  age, empName, salary := 1, "John", 45000.50
-
+	// With short declaration =   age, empName, salary := 1, "John", 45000.50
 	fmt.Println("age =", age, " , Employee Name= ", empName, " and salary= ", salary)
 
+	//-----------------------------------------------------------------------------------------------------------------
 	// 4. Constants with (const) keyword
 	const pi = 3.14
 	const name string = "Golang"
 	// Use const for immutable values.
 
+	//-----------------------------------------------------------------------------------------------------------------
 	// 5. Blank Identifier (_)
 	// Used when a variable is declared but not needed.
-	// x, _ := someFunction()  // Ignore the second return value
+	i, _ := randamNumber() // Ignore the second return value
+	fmt.Println("Random number i=", i)
 
+	//-----------------------------------------------------------------------------------------------------------------
 	// 6. Using Pointers
-
 	var ptr *int // Pointer to an int
 	ptr = &x     // Assign address of x
 
 	fmt.Printf("Pointer value = %v", ptr)
 
 	//Note : You will use proper pointer variable, when you use 'struct'
+}
+
+func randamNumber() (int, int) {
+	return 12, 45
 }
 
 // Few Imp Question -
