@@ -2,10 +2,8 @@ package main
 
 import "fmt"
 
-func main() {
-
-	fmt.Println("Learning Different Data types in Golang!!!")
-
+// 1. Basic data types
+func basicDataType() {
 	// There are 3 basic data types
 	// 1. Boolean: bool (true or false)
 	var isValid bool = true
@@ -25,7 +23,51 @@ func main() {
 	//  complex data type represents complex numbers, which consist of a real and an imaginary part, both of type float32.
 	var com complex64 = 5 + 0i
 
-	fmt.Printf("isValid =%v , count =%v , totalTickets = %v , pi=%v , and com=%v/n", isValid, count, totalTickets, pi, com)
+	fmt.Printf("\n Boolean Data Type isValid =%v , \n Integer Data type count =%v , \n Uint Data type totalTickets = %v , \n Float Data type pi=%v , \n Complex Data tpe com=%v", isValid, count, totalTickets, pi, com)
+
+}
+
+// 2. Composite Data Types - Array (fixed size)
+func arrayDataType() {
+
+	// 2.a Array: Fixed-size collection of elements, e.g., [5]int
+	var cities [5]string // An String array of size 5 (default values are 0)
+
+	cities[0] = "Agra"
+	cities[3] = "Pune"
+	fmt.Printf(" Arrays Data type Cities value = %v", cities)
+
+	// Other ways to declare array
+	// You can initialize an array while declaring it.
+	// var citis = [3]string{"PUNE", "AGRA", "DELHI"}
+
+	// Short Declaration Using :=
+	// arr := [3]string{"Go", "Python", "Java"}
+
+	// Using ... to Let Compiler Infer Size
+	arr := [...]int{10, 20, 30, 40}
+	fmt.Printf("\n arr value = %v", arr)
+
+	// Declaring and Initializing a Multi-dimensional Array
+	var matrix [2][3]int = [2][3]int{{1, 2, 3}, {4, 5, 6}}
+	// matrix := [...][3]int{{7, 8, 9}, {10, 11, 12}}
+
+	fmt.Println(matrix)
+
+	// Notes
+	// Arrays in Go have a fixed size and cannot be resized.
+	// Arrays are value types, meaning they are copied when assigned to another variable.
+
+}
+
+func main() {
+
+	fmt.Println("Learning Different Data types in Golang!!!")
+	fmt.Println("1. Basic Data type: ")
+	basicDataType()
+
+	fmt.Println("\n\n2. Composite Data type: ")
+	arrayDataType()
 
 	// Special Data Types
 	// nil: Represents an uninitialized reference type (e.g., pointer, slice, map, interface, channel, function).
