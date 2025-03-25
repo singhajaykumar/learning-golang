@@ -4,6 +4,7 @@ import "fmt"
 
 var globalVarCity string = "Agra" //  In Go, global variables are declared outside functions but within the package scope.
 var globalCityCount int           //  These variables can be accessed from any function within the same package.
+var gName = "city"
 
 // Few point of Global variable -
 // Declared outside any function.
@@ -97,6 +98,6 @@ func randamNumber() (int, int) {
 // No, we cannot use := for global variables in Go. It is only allowed inside functions.
 // := is shorthand for var and only works inside functions.
 // It is designed for local scope (inside func), not at the package level.
-// "If := were allowed for global variables, it could create ambiguity in scope.
+// If := were allowed for global variables, it could create ambiguity in scope.
 // Local functions might unintentionally shadow global variables, making it unclear whether a variable is being modified or redefined.
-// Go enforces var for global declarations to ensure explicit scoping and avoid unintended shadowing."
+// Go enforces var for global declarations to ensure explicit scoping and avoid unintended shadowing.

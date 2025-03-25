@@ -84,3 +84,9 @@ func main() {
 // based on your machine's platform, you can use the unsafe package to check the size of int
 // var count int
 // fmt.Printf("Type of x: int%v (size: %d bytes)\n", unsafe.Sizeof(count)*8, unsafe.Sizeof(count))
+
+// Q: Go lang is statically typed language?
+// That means we need to tell go compiler , the data type when declaring the variables
+// That is either asign variable some value or its data type
+//    1. var cityName = "Pune"  // Go can type inferred - automatically assign type based on its value
+// or 2. var cityName string    // or assign its data type
